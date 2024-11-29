@@ -9,5 +9,5 @@ jobs:
       - name: Show the issue events
         run: |
           echo "An issue has been created and the info reg issue is listed below...."
-          echo "All the metadata of events are"
-          echo "${{ toJson(github.event.title) }}"
+          echo "The title of the issue is"
+          echo "${{ toJson(github.event.issue.title) }}"

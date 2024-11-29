@@ -1,7 +1,7 @@
 name: issue_event
 on:
   issues:
-    types: [opened]
+    types: [opened, edited]
 jobs:
   issue_event_job:
     runs-on: ubuntu-latest
@@ -9,4 +9,7 @@ jobs:
       - name: Show the issue events
         run: |
           echo "An issue has been created and the info reg issue is listed below...."
-          echo "${{ toJson(github.event) }}"
+          all_event = ${{ toJson(github.event) }}
+          event_title = "${{ github.event.issue.title }}"
+          echo "All the metadata of events are - $all_event"
+          The issue title is - $event_title"

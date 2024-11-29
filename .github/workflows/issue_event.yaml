@@ -1,0 +1,12 @@
+name: issue_event
+on:
+  issues:
+    types: [opened]
+jobs:
+  issue_event_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show the issue events
+        run: |
+          echo "An issue has been created and the info reg issue is listed below...."
+          echo "${{ toJson(github.event) }}"

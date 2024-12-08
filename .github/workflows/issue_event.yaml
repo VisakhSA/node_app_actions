@@ -11,3 +11,4 @@ jobs:
           echo "An issue has been created and the info reg issue is listed below...."
           echo "The title of the issue is"
           echo "${{ toJson(github.event.issue.title) }}"
+          echo "The runner os is $RUNNER_OS"
